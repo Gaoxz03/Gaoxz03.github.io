@@ -1,9 +1,9 @@
-baseurl: https://example.com
+baseurl: https://Gaoxz03.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 3
-title: Example Site
-copyright: Example Person
+title: Gaoxz's Blog
+copyright: Gaoxz
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -16,7 +16,7 @@ hasCJKLanguage: true
 languages:
     zh-cn:
         languageName: 中文
-        title: 双生介的个人博客
+        title: 双生介の个人博客
         weight: 1
         params:
             description: 测试
@@ -41,7 +41,7 @@ params:
     favicon: # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
-        since: 2020
+        since: 2024
         customText:
 
     dateFormat:
@@ -49,12 +49,12 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        emoji: 🎯
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        emoji: 🤗
+        subtitle: 功名利禄尘与土
         avatar:
             enabled: true
             local: true
-            src: /avatar.jpg
+            src: img/avatar.jpg
 
     article:
         math: true
@@ -178,7 +178,7 @@ params:
 
     colorScheme:
         # Display toggle
-        toggle: true
+        toggle: false
 
         # Available values: auto, light, dark
         default: dark
@@ -201,6 +201,23 @@ menu:
           url: https://github.com/Gaoxz03
           params:
               icon: brand-github
+              newTab: true
+
+    social:
+        - identifier: bilibili
+          name: BiliBili
+          url: https://space.bilibili.com/7255544
+          params:
+            icon: brand-bilibili
+            newTab: true
+
+    social:
+        - identifier: email
+          name: E-Mail
+          url: mailto:gaoxz03@qq.com
+          params:
+            icon: mail
+
 
 related:
     includeNewer: true
@@ -217,7 +234,7 @@ markup:
     goldmark:
         renderer:
             ## Set to true if you have HTML content inside Markdown
-            unsafe: true
+            unsafe: false
     tableOfContents:
         endLevel: 4
         ordered: true

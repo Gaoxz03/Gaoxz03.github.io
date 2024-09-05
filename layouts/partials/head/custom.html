@@ -1,0 +1,29 @@
+<style>
+    /* Overwrite CSS variable */
+    :root {
+        --zh-font-family: "LXGW WenKai";
+        --base-font-family: var(--sys-font-family),var(--zh-font-family);
+        --code_font-family: "Cascadia Code", var(--zh-font-family);
+    }
+</style>
+
+<script>
+    (function () {
+        const LXGWWenKai = document.createElement('link');
+        LXGWWenKai.href = "https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css";
+    
+        LXGWWenKai.type = "text/css";
+        LXGWWenKai.rel = "stylesheet";
+    
+        document.head.appendChild(LXGWWenKai);
+    }());
+    (function () {
+        const CascadiaCode = document.createElement('link');
+        CascadiaCode.href = "https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css";
+    
+        CascadiaCode.type = "text/css";
+        CascadiaCode.rel = "stylesheet";
+    
+        document.head.appendChild(CascadiaCode);
+    }());
+</script>
