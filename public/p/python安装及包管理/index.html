@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="给朋友写的一个Python安装及管理的小教程">
+<title>Python安装及包管理</title>
+
+<link rel='canonical' href='https://Gaoxz03.github.io/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.3fb34517757cc1859c56721e830be67314f91418dba9306cc5f130948ada8d39.css"><meta property='og:title' content="Python安装及包管理">
+<meta property='og:description' content="给朋友写的一个Python安装及管理的小教程">
+<meta property='og:url' content='https://Gaoxz03.github.io/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/'>
+<meta property='og:site_name' content='双生介の个人博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Software' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2024-06-27T00:39:27&#43;08:00'/><meta property='article:modified_time' content='2024-06-27T00:39:27&#43;08:00'/>
+<meta name="twitter:title" content="Python安装及包管理">
+<meta name="twitter:description" content="给朋友写的一个Python安装及管理的小教程">
+  
+
+<style>
+     
+    :root {
+        --zh-font-family: "LXGW WenKai";
+        --base-font-family: var(--sys-font-family),var(--zh-font-family);
+        --code_font-family: "Cascadia Code", var(--zh-font-family);
+    }
+</style>
+
+<script>
+    (function () {
+        const LXGWWenKai = document.createElement('link');
+        LXGWWenKai.href = "https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css";
+    
+        LXGWWenKai.type = "text/css";
+        LXGWWenKai.rel = "stylesheet";
+    
+        document.head.appendChild(LXGWWenKai);
+    }());
+    (function () {
+        const CascadiaCode = document.createElement('link');
+        CascadiaCode.href = "https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css";
+    
+        CascadiaCode.type = "text/css";
+        CascadiaCode.rel = "stylesheet";
+    
+        document.head.appendChild(CascadiaCode);
+    }());
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12241355324924518169.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤗</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">双生介の个人博客</a></h1>
+            <h2 class="site-description">功名利禄尘与土</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:gaoxz03@qq.com'
+                        target="_blank"
+                        title="E-Mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#windows操作系统的python安装">Windows操作系统的Python安装</a>
+      <ol>
+        <li><a href="#python安装">Python安装</a>
+          <ol>
+            <li><a href="#确定python版本">确定Python版本</a></li>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#安装后的确认">安装后的确认</a></li>
+            <li><a href="#多版本python的安装及管理">多版本Python的安装及管理</a></li>
+          </ol>
+        </li>
+        <li><a href="#pip包管理">pip包管理</a></li>
+      </ol>
+    </li>
+    <li><a href="#linux安装python">Linux安装Python</a>
+      <ol>
+        <li><a href="#python安装-1">Python安装</a></li>
+        <li><a href="#linux环境下的python包管理">Linux环境下的Python包管理</a></li>
+      </ol>
+    </li>
+    <li><a href="#pipenv--pip">pipenv &amp; pip</a>
+      <ol>
+        <li><a href="#pipenv">pipenv</a></li>
+        <li><a href="#pip">pip</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/software/" >
+                Software
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/">Python安装及包管理</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            给朋友写的一个Python安装及管理的小教程
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 27, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 10 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="01_python安装及包管理">01_Python安装及包管理
+</h1><p>本文将主要就Windows操作系统和Linux操作系统中python的安装以及包管理相关操作进行说明。</p>
+<h2 id="windows操作系统的python安装">Windows操作系统的Python安装
+</h2><h3 id="python安装">Python安装
+</h3><p>安装纯Python是个人相对来说更推荐的方法。相较于Anaconda体积更小，使用命令直接操作也比较便捷。而且Anaconda存在商用版本和社区版的区别，虽然对个人开发者和研究人员可以使用社区版，但相较于Python而言存在一定的法律风险。而且Anaconda所占的硬盘空间也较多。<del>总之个人十分不推荐，即便它算是Python最成功的包管理及Python环境管理软件。</del></p>
+<p>首先，Python的安装包可以从下面的链接处下载：</p>
+<ul>
+<li><a class="link" href="https://www.python.org/downloads/windows/"  target="_blank" rel="noopener"
+    >Python安装包</a></li>
+</ul>
+<p><strong>请务必注意，虽然Windows自带的 Microsoft Store 中也可以搜到Python，但是一定不要从里面安装！！！</strong></p>
+<p><strong>另外，虽然Windows现在可以使用winget进行类似Linux的软件安装，但是由于其默认的安装路径不可控，因此不推荐使用。</strong></p>
+<h4 id="确定python版本">确定Python版本
+</h4><p>在该页面下可以找到Python到目前为止的所有Windows系统的安装包。可以在该页面安装一些已经被Python官方停止支持的Python版本（部分项目会用到非最新的Python，有些上古项目甚至可能用到Python2）。</p>
+<p>选择Python版本的时候可以选择一个与项目组匹配的Python版本，如果只是自学也可以只安装最新的Python版本（一般尽量选择稳定版本）。</p>
+<p>选择完版本号后，还需要根据电脑的处理器架构选择正确的处理器版本。</p>
+<p>在此以Python 3.12.4为例，一般选择 Windows installer(64-bit) ，点击后即开始下载。</p>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_01_Python_Download.png"
+	width="1597"
+	height="931"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_01_Python_Download_hu16727388761895171347.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_01_Python_Download_hu14428686652928336836.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="171"
+		data-flex-basis="411px"
+	
+></p>
+<h4 id="安装">安装
+</h4><p>由于本人已经安装过Python3.12，故后续以Python3.11做示例，一般来说Python的安装过程不会因版本变化产生较大差别。</p>
+<ol>
+<li>以管理员身份运行安装程序，将两个复选框勾选后点击Customize installation</li>
+</ol>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_02_Python_Install_01.png"
+	width="1598"
+	height="977"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_02_Python_Install_01_hu2972580382409991939.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_02_Python_Install_01_hu16078369998638749204.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="163"
+		data-flex-basis="392px"
+	
+></p>
+<ol start="2">
+<li>除 for all user之外全部勾选，点击Next</li>
+</ol>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_03_Python_Install_02.png"
+	width="1596"
+	height="982"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_03_Python_Install_02_hu15134695763105785087.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_03_Python_Install_02_hu11782191592856061942.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="162"
+		data-flex-basis="390px"
+	
+></p>
+<ol start="3">
+<li>勾选红框框中的4个复选框，并修改安装路径</li>
+</ol>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_04_Python_Install_03.png"
+	width="1592"
+	height="984"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_04_Python_Install_03_hu12695787667555792582.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_04_Python_Install_03_hu18340673752270925031.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="388px"
+	
+></p>
+<blockquote>
+<p>由于本人使用的Python版本较少且C盘容量够大，一般建议在非系统盘的根目录建立单独的Python文件夹，在Python文件夹下再单独存放不同版本的Python。下面是一个示例</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\Python
+</span></span><span class="line"><span class="cl">	├─Python311
+</span></span><span class="line"><span class="cl">	├─Python312
+</span></span><span class="line"><span class="cl">	├─........
+</span></span><span class="line"><span class="cl">	└─Python38
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>举个例子，本次安装的Python 3.11，在Customize install location中需要填入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\P</span>ython<span class="se">\P</span>ython311
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>点击Install即可完成安装。</p>
+<h4 id="安装后的确认">安装后的确认
+</h4><p>按Win键搜索Powershell，输入Python，如果能够正确输出如图的版本号则安装成功。</p>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_05_Python_Check.png"
+	width="1591"
+	height="954"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_05_Python_Check_hu14515905844967417556.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_05_Python_Check_hu8430690654682646716.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="400px"
+	
+></p>
+<p>若安装正确，则关闭当前窗口，或输入下面命令回车，即可退出。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">quit</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果未正确输出，请查看下一节中关于环境变量的说明进行修改。</p>
+<h4 id="多版本python的安装及管理">多版本Python的安装及管理
+</h4><p>如果需要安装多个版本的Python，一般按照上述内容，重复 确定Python版本 &ndash;&gt; 安装即可。</p>
+<p>但是多个Python包安装后，其Python解释器的启动文件都叫python.exe，且这些多个版本的Python都在安装的时候选择了将各版本的python注册到系统的环境变量中。如果继续在Powershell中使用python来调用python可能就不能找到所需的Python版本。其解决方法已经被Python内置（安装时选择的 py launcher），其调用方法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入该指令后，py launcher将从系统环境变量中查找安装的Python版本。如果没有任何的参数输入，将调用默认的Python版本。</p>
+<p>设置Python的默认版本的方法如下：</p>
+<ol>
+<li>按win键搜索 “环境变量”</li>
+<li>在弹出的窗口点击“环境变量(N)”</li>
+</ol>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_07_enviroment.png"
+	width="1032"
+	height="1192"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_07_enviroment_hu17607527715114424284.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_07_enviroment_hu15400617413917072964.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="86"
+		data-flex-basis="207px"
+	
+></p>
+<ol start="3">
+<li>如果在安装的时候没有勾选 Install Python for all users，则python的环境变量应保存在上半框中的Path中；如果安装的时候勾选了Install Python for all users，则python的环境变量应保存在下班框中的Path中。（是否勾选需要所有python版本在安装时保持一致）</li>
+<li>双击Path变量，可以看到如下界面。以下图为例，可以看到本机共安装了 Python 3.12 和 Python 3.11 两个版本，且Python3.12的两个相关变量位于Path中更靠前的位置。假设本机只安装了这两个Python版本，Path变量这样的排列这意味着：在这台机器如果使用只使用 py 指令而不加任何其他参数，系统将优先调用3.12版本的Python（直接输入python也将调用3.12版本）。如果需要将3.11设置为默认版本，则需要分别选中python311的两个相关路径，点击右侧的 Move Up，让两个python311变量均在python312之前，并点击ok进行保存（三层都要点ok），保存完后关闭已打开的powershell重新打开，输入py 或者python就会调用3.11版本的Python。</li>
+</ol>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_08_path.png"
+	width="1198"
+	height="1315"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_08_path_hu12823248034339723259.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_08_path_hu101619475717042660.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="91"
+		data-flex-basis="218px"
+	
+></p>
+<blockquote>
+<p>对于安装之后在Powershell中输入python无反应的情况，需要在上图所示界面将python路径加入：</p>
+<ol>
+<li>python.exe所在的路径</li>
+</ol>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_09_python_path.png"
+	width="1509"
+	height="914"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_09_python_path_hu10069458345773757556.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_09_python_path_hu12512002295510162643.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="165"
+		data-flex-basis="396px"
+	
+></p>
+<ol start="2">
+<li>pip.exe所在路径：python.exe所在路径的基础上加上&quot;PYTHON_PATH\Scripts&quot;</li>
+</ol>
+</blockquote>
+<p>关于py的使用下面给一个较为简单的说明：</p>
+<p>查看当前已成功安装的python版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">py --list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用该命令后，输出的log如下：</p>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_10_py_list.png"
+	width="1600"
+	height="962"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_10_py_list_hu17043986041849678139.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_10_py_list_hu3507356868522341743.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="399px"
+	
+></p>
+<p>可以看到，示例电脑共安装了3.12、3.11、3.8三个python版本。想要调用具体版本的python，使用下面的命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">py -V:VERSION
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面给三个具体的示例：</p>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_11_py_version.png"
+	width="1605"
+	height="960"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_11_py_version_hu14276097498139219485.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_11_py_version_hu2953777722241710042.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="401px"
+	
+></p>
+<p>关于py指令的更多使用方法，使用如下命名查看：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">py --help
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="pip包管理">pip包管理
+</h3><p>一般来说，很多python教程都会在安装包的时候建议直接输入下列命令进行包的安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip install PACKAGENAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#If above command can&#39;t install package, use the command below</span>
+</span></span><span class="line"><span class="cl">python -m pip install PACKAGENAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Recommend command</span>
+</span></span><span class="line"><span class="cl">py -V:VERSION -m pip install PACKAGENAME
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但是如果使用这个方法安装所有包，在不同的项目中很容易因为包过多、每个包之间的依赖关系等问题带来问题。因此强烈不建议使用pip安装所有的包。</p>
+<p>但是，还是需要使用pip安装一些基础支持包和环境。</p>
+<p>建议安装的包如下：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Package Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wheel</td>
+<td>安装类似Numpy之类的使用.whl格式的Python包</td>
+</tr>
+<tr>
+<td>pipenv</td>
+<td>Python虚拟环境管理包</td>
+</tr>
+</tbody>
+</table></div>
+<p>除这两个包之外，其他所有包都不建议直接使用pip安装，而是使用pipenv创建虚拟环境后在各项目的虚拟环境中单独安装。</p>
+<p>安装上述的这两个包，请在Powershell中下面的两个命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#Install wheel</span>
+</span></span><span class="line"><span class="cl">pip install wheel
+</span></span><span class="line"><span class="cl"><span class="c1">#If above command can&#39;t install package, use the command below</span>
+</span></span><span class="line"><span class="cl">python -m pip install wheel
+</span></span><span class="line"><span class="cl"><span class="c1">#Recommend command</span>
+</span></span><span class="line"><span class="cl">py -V:VERSION -m pip install wheel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Install pipenv</span>
+</span></span><span class="line"><span class="cl">pip install pipenv
+</span></span><span class="line"><span class="cl"><span class="c1">#If above command can&#39;t install package, use the command below</span>
+</span></span><span class="line"><span class="cl">python -m pip install pipenv
+</span></span><span class="line"><span class="cl"><span class="c1">#Recommend command</span>
+</span></span><span class="line"><span class="cl">py -V:VERSION -m pip install pipenv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成后，在Powershell中输入下一条命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip list
+</span></span><span class="line"><span class="cl"><span class="c1">#If above command can&#39;t install package, use the command below</span>
+</span></span><span class="line"><span class="cl">python -m pip list
+</span></span><span class="line"><span class="cl"><span class="c1">#Recommend command</span>
+</span></span><span class="line"><span class="cl">py -V:VERSION -m pip list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出的log如下所示：</p>
+<p><img src="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_06_pip_list.png"
+	width="1606"
+	height="955"
+	srcset="/p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_06_pip_list_hu14971038879006930973.png 480w, /p/python%E5%AE%89%E8%A3%85%E5%8F%8A%E5%8C%85%E7%AE%A1%E7%90%86/01_06_pip_list_hu13822207310389751614.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="168"
+		data-flex-basis="403px"
+	
+></p>
+<p>版本不需要与此处所示的版本相同，只需要保证包已安装完成即可。</p>
+<p>后续操作请转到共用操作出查看pipenv的具体使用及pip的相关指令。</p>
+<h2 id="linux安装python">Linux安装Python
+</h2><h3 id="python安装-1">Python安装
+</h3><p>对于初次使用Linux使用的新手，不建议上来就开始配置多版本的Python环境，本文将只对单版本的Python安装进行解释。</p>
+<p>一般的Linux发行版都会预装python，对于Linux可以先直接在bash中输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看是否安装了python，如果没有类似Windows的python环境显示出来，则需要使用下列命令进行安装（需要注意的时，接下来的操作都将使用到管理员权限，没有管理员密码将无法操作）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Debian \ Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo apt-get install python3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Arch Linux</span>
+</span></span><span class="line"><span class="cl">sudo pacman -S python3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Red Hat / Cent OS</span>
+</span></span><span class="line"><span class="cl">sudo yum -y install python3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Linux 发行版一般不会预装pip，需要手动安装，安装pip的指令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Debian \ Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo apt-get install python3-pip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Arch Linux</span>
+</span></span><span class="line"><span class="cl">sudo pacman -S python3-pip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Red Hat / Cent OS</span>
+</span></span><span class="line"><span class="cl">sudo yum -y install python3-pip
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="linux环境下的python包管理">Linux环境下的Python包管理
+</h3><p>与Windows使用pip直接安装包不同，Linux中Python包采用的不同的发行策略，一般都需要使用系统的包管理软件进行安装。因此，安装pipenv和wheel需要使用对应的包管理软件指令进行安装。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Debian \ Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo apt-get install pipenv python3-wheel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Arch Linux</span>
+</span></span><span class="line"><span class="cl">sudo pacman -S pipenv python3-wheel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Red Hat / Cent OS</span>
+</span></span><span class="line"><span class="cl">sudo yum -y install pipenv python3-wheel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完后，就可以使用pipenv进行环境配置了。</p>
+<h2 id="pipenv--pip">pipenv &amp; pip
+</h2><h3 id="pipenv">pipenv
+</h3><p>pipenv是一个非常好用的python虚拟环境配置工具。这个工具可以实现为不同的工程设置不同的python版本、不同的python包依赖环境。同时对于Linux来说，还可以使用pip在虚拟环境中安装所需的python包，使得在Linux中需要使用的命令与Windows环境基本一致。</p>
+<p>pipenv的官网如下：</p>
+<ul>
+<li><a class="link" href="https://pipenv.pypa.io/en/latest/"  target="_blank" rel="noopener"
+    >pipenv</a></li>
+<li><a class="link" href="https://pipenv.pypa.io/zh-cn/latest/"  target="_blank" rel="noopener"
+    >pipenv 中文文档</a></li>
+</ul>
+<p>关于pipenv的所有文档都在该网站。</p>
+<p>或者也可以在Powershell或者bash中输入下面的命令以得到一些基础参数的提示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pipenv --help
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该命令的输出log如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Usage: pipenv <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Options:
+</span></span><span class="line"><span class="cl">  --where                         Output project home information.
+</span></span><span class="line"><span class="cl">  --venv                          Output virtualenv information.
+</span></span><span class="line"><span class="cl">  --py                            Output Python interpreter information.
+</span></span><span class="line"><span class="cl">  --envs                          Output Environment Variable options.
+</span></span><span class="line"><span class="cl">  --rm                            Remove the virtualenv.
+</span></span><span class="line"><span class="cl">  --bare                          Minimal output.
+</span></span><span class="line"><span class="cl">  --man                           Display manpage.
+</span></span><span class="line"><span class="cl">  --support                       Output diagnostic information <span class="k">for</span> use in
+</span></span><span class="line"><span class="cl">                                  GitHub issues.
+</span></span><span class="line"><span class="cl">  --site-packages / --no-site-packages
+</span></span><span class="line"><span class="cl">                                  Enable site-packages <span class="k">for</span> the virtualenv.
+</span></span><span class="line"><span class="cl">                                  <span class="o">[</span>env var: PIPENV_SITE_PACKAGES<span class="o">]</span>
+</span></span><span class="line"><span class="cl">  --python TEXT                   Specify which version of Python virtualenv
+</span></span><span class="line"><span class="cl">                                  should use.
+</span></span><span class="line"><span class="cl">  --clear                         Clears caches <span class="o">(</span>pipenv, pip<span class="o">)</span>.  <span class="o">[</span>env var:
+</span></span><span class="line"><span class="cl">                                  PIPENV_CLEAR<span class="o">]</span>
+</span></span><span class="line"><span class="cl">  -q, --quiet                     Quiet mode.
+</span></span><span class="line"><span class="cl">  -v, --verbose                   Verbose mode.
+</span></span><span class="line"><span class="cl">  --pypi-mirror TEXT              Specify a PyPI mirror.
+</span></span><span class="line"><span class="cl">  --version                       Show the version and exit.
+</span></span><span class="line"><span class="cl">  -h, --help                      Show this message and exit.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Usage Examples:
+</span></span><span class="line"><span class="cl">   Create a new project using Python 3.7, specifically:
+</span></span><span class="line"><span class="cl">   $ pipenv --python 3.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Remove project virtualenv <span class="o">(</span>inferred from current directory<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">   $ pipenv --rm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Install all dependencies <span class="k">for</span> a project <span class="o">(</span>including dev<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">   $ pipenv install --dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Create a lockfile containing pre-releases:
+</span></span><span class="line"><span class="cl">   $ pipenv lock --pre
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Show a graph of your installed dependencies:
+</span></span><span class="line"><span class="cl">   $ pipenv graph
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Check your installed dependencies <span class="k">for</span> security vulnerabilities:
+</span></span><span class="line"><span class="cl">   $ pipenv check
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Install a <span class="nb">local</span> setup.py into your virtual environment/Pipfile:
+</span></span><span class="line"><span class="cl">   $ pipenv install -e .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   Use a lower-level pip command:
+</span></span><span class="line"><span class="cl">   $ pipenv run pip freeze
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Commands:
+</span></span><span class="line"><span class="cl">  check         Checks <span class="k">for</span> PyUp Safety security vulnerabilities and against
+</span></span><span class="line"><span class="cl">                PEP <span class="m">508</span> markers provided in Pipfile.
+</span></span><span class="line"><span class="cl">  clean         Uninstalls all packages not specified in Pipfile.lock.
+</span></span><span class="line"><span class="cl">  graph         Displays currently-installed dependency graph information.
+</span></span><span class="line"><span class="cl">  install       Installs provided packages and adds them to Pipfile, or <span class="o">(</span><span class="k">if</span> no
+</span></span><span class="line"><span class="cl">                packages are given<span class="o">)</span>, installs all packages from Pipfile.
+</span></span><span class="line"><span class="cl">  lock          Generates Pipfile.lock.
+</span></span><span class="line"><span class="cl">  open          View a given module in your editor.
+</span></span><span class="line"><span class="cl">  requirements  Generate a requirements.txt from Pipfile.lock.
+</span></span><span class="line"><span class="cl">  run           Spawns a <span class="nb">command</span> installed into the virtualenv.
+</span></span><span class="line"><span class="cl">  scripts       Lists scripts in current environment config.
+</span></span><span class="line"><span class="cl">  shell         Spawns a shell within the virtualenv.
+</span></span><span class="line"><span class="cl">  sync          Installs all packages specified in Pipfile.lock.
+</span></span><span class="line"><span class="cl">  uninstall     Uninstalls a provided package and removes it from Pipfile.
+</span></span><span class="line"><span class="cl">  update        Runs lock, <span class="k">then</span> sync.
+</span></span><span class="line"><span class="cl">  upgrade       Resolves provided packages and adds them to Pipfile, or <span class="o">(</span><span class="k">if</span> no
+</span></span><span class="line"><span class="cl">                packages are given<span class="o">)</span>, merges results to Pipfile.lock
+</span></span><span class="line"><span class="cl">  verify        Verify the <span class="nb">hash</span> in Pipfile.lock is up-to-date.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一般来说，比较常用的命令有：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Use Default python version to create a virtual enviroment</span>
+</span></span><span class="line"><span class="cl">pipenv install
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Use python VERSION to create a virtual enviroment</span>
+</span></span><span class="line"><span class="cl">pipenv --python VERSION
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Open a shell in virtual enviroment</span>
+</span></span><span class="line"><span class="cl">pipenv shell
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Already used &#34;pipenv shell&#34; command, want to quit this virtual enviroment</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Remove virtual enviroment in current path</span>
+</span></span><span class="line"><span class="cl">pipenv -rm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Show all package in this virtual enviroment</span>
+</span></span><span class="line"><span class="cl">pipenv graph
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中需要特别提出的是，当使用了&quot;pipenv shell&quot;命令后，只要还没有使用&quot;exit&quot;，则在该环境中可以使用pip安装python包（不论是Windows还是Linux）。</p>
+<p>此处列出的仅仅只是pipenv极基础的用法，更多用法建议参考pipenv手册（Linux中使用 &ldquo;man pipenv&quot;或查看本节中列出的两个链接）。</p>
+<h3 id="pip">pip
+</h3><p>上文实际上已经提及了pip的安装命令，本节将主要就pip安装包、卸载包、更新包、导出当前依赖包列表、pip自更新进行解释。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Install a package</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Only recommend in a virtual enviroment</span>
+</span></span><span class="line"><span class="cl">pip install PACKAGENAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Uninstall a package</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Only recommend in a virtual enviroment</span>
+</span></span><span class="line"><span class="cl">pip uninstall PACKAGENAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#List all package in current enviroment</span>
+</span></span><span class="line"><span class="cl">pip list
+</span></span><span class="line"><span class="cl"><span class="c1">#For a specific version python </span>
+</span></span><span class="line"><span class="cl">py -V:VERSION -m pip list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Only recommend in a virtual enviroment</span>
+</span></span><span class="line"><span class="cl">python -m pip install –-upgrade PACKAGENAME
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Update pip</span>
+</span></span><span class="line"><span class="cl">py -V:VERSION -m pip --uppgrade pip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Freeze current pip package enviroment in requirements.txt at CURRENT PATH</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Only recommend in a virtual enviroment</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Use &#34;pipenv shell&#34; before using this command</span>
+</span></span><span class="line"><span class="cl">pip freeze &gt; requirements.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Unfreeze a pip package enviroment from requirements.txt at CURRENT PATH</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Only recommend in a virtual enviroment</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Use &#34;pipenv shell&#34; before using this command</span>
+</span></span><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#For help</span>
+</span></span><span class="line"><span class="cl">pip --help
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面已经包含了一些常用的pip命令。这些命令不强求需要记住，只需要有一个大概的了解。在使用PyCharm进行开发的时候这些操作都可以使用图形化界面进行配置。但是还是需要有个印象，因为如果不使用PyCharm等现代IDE做项目开发的时候，或者极小可能的情况下IDE或网络抽风的情况下，只能使用命令行做应急的时候还是需要这些命令的。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/software/">Software</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 Gaoxz
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

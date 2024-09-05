@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on 双生介の个人博客</title>
+        <link>https://Gaoxz03.github.io/categories/</link>
+        <description>Recent content in Categories on 双生介の个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Gaoxz</copyright>
+        <lastBuildDate>Thu, 05 Sep 2024 15:02:26 +0800</lastBuildDate><atom:link href="https://Gaoxz03.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>EMC</title>
+        <link>https://Gaoxz03.github.io/categories/emc/</link>
+        <pubDate>Thu, 05 Sep 2024 15:02:26 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/categories/emc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hardware</title>
+        <link>https://Gaoxz03.github.io/categories/hardware/</link>
+        <pubDate>Thu, 05 Sep 2024 15:02:26 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/categories/hardware/</guid>
+        <description>&lt;img src="https://Gaoxz03.github.io/categories/hardware/Hardware_Categories.jpg" alt="Featured image of post Hardware" /&gt;</description>
+        </item>
+        <item>
+        <title>Software</title>
+        <link>https://Gaoxz03.github.io/categories/software/</link>
+        <pubDate>Thu, 27 Jun 2024 00:39:27 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/categories/software/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

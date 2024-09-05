@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on 双生介の个人博客</title>
+        <link>https://Gaoxz03.github.io/tags/</link>
+        <description>Recent content in Tags on 双生介の个人博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Gaoxz</copyright>
+        <lastBuildDate>Thu, 05 Sep 2024 15:02:26 +0800</lastBuildDate><atom:link href="https://Gaoxz03.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>EMC</title>
+        <link>https://Gaoxz03.github.io/tags/emc/</link>
+        <pubDate>Thu, 05 Sep 2024 15:02:26 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/tags/emc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>ESD</title>
+        <link>https://Gaoxz03.github.io/tags/esd/</link>
+        <pubDate>Thu, 05 Sep 2024 15:02:26 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/tags/esd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hardware</title>
+        <link>https://Gaoxz03.github.io/tags/hardware/</link>
+        <pubDate>Thu, 05 Sep 2024 15:02:26 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/tags/hardware/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://Gaoxz03.github.io/tags/python/</link>
+        <pubDate>Thu, 27 Jun 2024 00:39:27 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Software</title>
+        <link>https://Gaoxz03.github.io/tags/software/</link>
+        <pubDate>Thu, 27 Jun 2024 00:39:27 +0800</pubDate>
+        
+        <guid>https://Gaoxz03.github.io/tags/software/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
