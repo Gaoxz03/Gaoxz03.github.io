@@ -65,7 +65,7 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: true
+        enabled: false
         provider: disqus
 
         disqusjs:
@@ -147,6 +147,7 @@ params:
         cusdis:
             host:
             id:
+
     widgets:
         homepage:
             - type: search
@@ -201,20 +202,16 @@ menu:
           url: https://github.com/Gaoxz03
           params:
               icon: brand-github
-              newTab: true
 
-    social:
         - identifier: bilibili
           name: BiliBili
           url: https://space.bilibili.com/7255544
           params:
             icon: brand-bilibili
-            newTab: true
 
-    social:
         - identifier: email
           name: E-Mail
-          url: mailto:gaoxz03@qq.com
+          url: mailto:gaoxz03@outlook.com
           params:
             icon: mail
 
