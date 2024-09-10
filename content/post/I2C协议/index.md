@@ -11,7 +11,6 @@ categories = [
     "Hardware",
     "Embedded Software",
 ]
-draft = true
 +++
 
 # I2C协议
