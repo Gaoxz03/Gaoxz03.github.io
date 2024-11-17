@@ -1,6 +1,7 @@
 +++
 author = "Gaoxz"
 title = '静电放电防护'
+description = "关于ESD防护的思考及阅读笔记"
 date = 2024-09-05T15:02:26+08:00
 tags = [
     "Hardware",
@@ -9,7 +10,6 @@ tags = [
 ] 
 categories = [
     "Hardware",
-    "EMC",
 ]
 +++
 

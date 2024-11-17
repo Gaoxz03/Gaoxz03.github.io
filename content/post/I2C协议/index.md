@@ -1,7 +1,7 @@
 +++
 author = "Gaoxz"
 title = 'I2C协议'
-description = "PLACE DESCRIPTION HERE"
+description = "一个关于I2C协议的简要介绍"
 date = 2024-09-10T14:07:22+08:00
 tags = [
     "Hardware",

@@ -1,7 +1,7 @@
 +++
 author = "Gaoxz"
 title = 'Python安装及包管理'
-description = "给朋友写的一个Python安装及管理的小教程"
+description = "一个Python安装及管理的小教程"
 date = 2024-06-27T00:39:27+08:00
 tags = [
     "Software",
