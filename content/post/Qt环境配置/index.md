@@ -198,9 +198,9 @@ endif(LINUX)
 
 3. 配置完成后右键单击CMakeLists.txt选择Reload CMake Project。
 
-<img src="image-20241117233519173.png" alt="image-20241117233519173" style="zoom:50%;" />
+![image-20241117233519173](image-20241117233519173.png)
 
-4. 在 `Build,Execution,Deplotment -> CMake` 中添加配置
+1. 在 `Build,Execution,Deplotment -> CMake` 中添加配置
 
 ![image-20241117233817295](image-20241117233817295.png)
 
