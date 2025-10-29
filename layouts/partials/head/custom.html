@@ -1,21 +1,21 @@
 <style>
     /* Overwrite CSS variable */
     :root {
-        --zh-font-family: "LXGW WenKai";
-        --base-font-family: var(--sys-font-family),var(--zh-font-family);
+        --zh-font-family: "Noto Serif SC", sans-serif;
+        --base-font-family: var(--zh-font-family),var(--sys-font-family);
         --code_font-family: "Cascadia Code", var(--zh-font-family);
     }
 </style>
 
 <script>
     (function () {
-        const LXGWWenKai = document.createElement('link');
-        LXGWWenKai.href = "https://cdn.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/style.css";
+        const NotoSerif = document.createElement('link');
+        NotoSerif.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap";
     
-        LXGWWenKai.type = "text/css";
-        LXGWWenKai.rel = "stylesheet";
+        NotoSerif.type = "text/css";
+        NotoSerif.rel = "stylesheet";
     
-        document.head.appendChild(LXGWWenKai);
+        document.head.appendChild(NotoSerif);
     }());
     (function () {
         const CascadiaCode = document.createElement('link');
