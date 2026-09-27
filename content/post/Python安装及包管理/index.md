@@ -6,11 +6,15 @@ date = 2024-06-27T00:39:27+08:00
 tags = [
     "Software",
     "Python",
+    "Enviroment",
 ]
 categories = [
     "Software",
 ]
 +++
+
+> [!WARNING]
+> 该文初衷是作为给我两个非CS相关专业的同学作为引导，不一定适合CS相关专业的开发。目前个人更推荐安装一个基础的 Python 版本后使用 [astral-sh.uv](https://docs.astral.sh/uv/) 作为包管理工具，但 pipenv 仍然也可以作为一个备选方案
 
 # 01_Python安装及包管理
 

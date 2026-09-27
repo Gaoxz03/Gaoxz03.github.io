@@ -4,8 +4,8 @@ title = 'I2C协议'
 description = "一个关于I2C协议的简要介绍"
 date = 2024-09-10T14:07:22+08:00
 tags = [
-    "Hardware",
-    "Embedded Software",
+    "I2C",
+	"Protocol"
 ]
 categories = [
     "Hardware",

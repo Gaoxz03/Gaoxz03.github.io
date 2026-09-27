@@ -1,0 +1,33 @@
+# Configure main menu and social menu
+#[[main]]
+#identifier = "home"
+#name = "Home"
+#url = "/"
+#[main.params]
+#icon = "home"
+#newtab = true
+
+[[social]]
+    identifier = "github"
+    name       = "GitHub"
+    url        = "https://github.com/Gaoxz03"
+
+    [social.params]
+        icon = "brand-github"
+
+[[social]]
+    identifier = "bilibili"
+    name       = "BiliBili"
+    url        = "https://space.bilibili.com/7255544"
+
+    [social.params]
+        icon = "brand-bilibili"
+
+
+[[social]]
+    identifier = "mail"
+    name       = "Mail"
+    url        = "mailto:gaoxz03@outlook.com"
+
+    [social.params]
+        icon = "mail"

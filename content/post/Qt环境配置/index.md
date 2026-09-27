@@ -7,6 +7,7 @@ tags = [
     "Software",
     "C++",
     "Qt",
+    "Enviroment",
 ]
 categories = [
     "Software",
